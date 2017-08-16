@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="container">
+  <radio-group class="cardClass" bindchange="classChange">
+    <label class="classRadio" wx:for="{{classItems}}">
+      <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+    </label>
+  </radio-group>
+  <radio-group class="cardCost" bindchange="costChange">
+    <label class="costRadio" wx:for="{{costItems}}">
+      <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+    </label>
+  </radio-group>
+  <radio-group class="cardStandard" bindchange="standardChange">
+    <label class="standardRadio" wx:for="{{standardItems}}">
+      <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+    </label>
+  </radio-group>
+  <input type="text" placeholder="" auto-focus password />
+</view>
