@@ -1,12 +1,12 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/list/list"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "炉石卡牌搜",
+    "navigationBarTitleText": "炉石卡牌集",
     "navigationBarTextStyle":"black"
   }
 }

@@ -1,19 +1,19 @@
-<!--index.wxml-->
 <view class="container">
   <radio-group class="cardClass" bindchange="classChange">
-    <label class="classRadio" wx:for="{{classItems}}">
+    <label class="classRadio" wx:for="{{classItems}}" wx:key="name">
       <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
     </label>
   </radio-group>
   <radio-group class="cardCost" bindchange="costChange">
-    <label class="costRadio" wx:for="{{costItems}}">
+    <label class="costRadio" wx:for="{{costItems}}" wx:key="name">
       <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
     </label>
   </radio-group>
   <radio-group class="cardStandard" bindchange="standardChange">
-    <label class="standardRadio" wx:for="{{standardItems}}">
+    <label class="standardRadio" wx:for="{{standardItems}}" wx:key="name">
       <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
     </label>
   </radio-group>
-  <input type="text" placeholder="" auto-focus password />
+  <input type="text" placeholder="请输入关键字" maxlength='12' confirm-type='search' bindblur='bindBlur'/>
+  <button type="primary" size="defaultSize" bindtap="doSearch" >搜索</button>
 </view>

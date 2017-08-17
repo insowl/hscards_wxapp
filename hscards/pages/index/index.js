@@ -15,6 +15,7 @@ Page({
     ],
     costItems: [
       {name: '', value: '全部', checked: 'true'},
+      {name: '0', value: '0'},
       {name: '1', value: '1'},
       {name: '2', value: '2'},
       {name: '3', value: '3'},
@@ -30,23 +31,35 @@ Page({
     cardClass: '',
     cardCost: '',
     cardStandard: 1,
+    keywords: ''
   },
   classChange: function(e) {
     this.setData({
       cardClass: e.detail.value
     })
-    console.log('cardClass=' + this.data.cardClass)
   },
   costChange: function(e) {
     this.setData({
       cardCost: e.detail.value
     })
-    console.log('cost=' + this.data.cardCost)
   },
   standardChange:function(e){
     this.setData({
       cardStandard: e.detail.value
     })
+  },
+  bindBlur: function(e){
+    this.setData({
+      keywords: e.detail.value
+    })
+  },
+  doSearch: function(){
+    console.log('cardClass=' + this.data.cardClass)
+    console.log('cost=' + this.data.cardCost)
     console.log('standard=' + this.data.cardStandard)
+    console.log('keywords=' + this.data.keywords)
+    wx.navigateTo({
+        url: "../list/list?cardClass="+this.data.cardClass+"&cost="+this.data.cardCost+"&standard="+this.data.cardStandard+"&keywords="+this.data.keywords
+    })
   }
 })
