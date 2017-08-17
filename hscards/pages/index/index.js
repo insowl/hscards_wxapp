@@ -1,5 +1,7 @@
 Page({
   data: {
+    classIndex: 0,
+    costIndex: 0,
     classItems: [
       {name: '', value: '全部', checked: 'true'},
       {name: 'druid', value: '德鲁伊'},
@@ -32,6 +34,24 @@ Page({
     cardCost: '',
     cardStandard: 1,
     keywords: ''
+  },
+  classPickerChange: function(e){
+    this.setData({
+      classIndex: e.detail.value,
+    })
+    this.setData({
+      cardClass: this.data.classItems[this.data.classIndex].name
+    })
+    console.log(this.data.classIndex + this.data.cardClass)
+  },
+  costPickerChange: function(e){
+    this.setData({
+      costIndex: e.detail.value,
+    })
+    this.setData({
+      cardCost: this.data.costItems[this.data.costIndex].name
+    })
+    console.log(this.data.costIndex + this.data.cardCost)
   },
   classChange: function(e) {
     this.setData({

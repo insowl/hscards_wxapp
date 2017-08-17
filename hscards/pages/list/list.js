@@ -34,7 +34,9 @@ Page({
     }
     util.GET('action/cards/query', this.data.params, function(res) {
       console.log(res)
-      that.data.params.p = res.data.nextPage
+      that.setData({
+        'params.p': res.data.nextPage
+      })
       console.log(that.data.params)
       var sum = 0
       if(that.data.isAllClass){
@@ -44,7 +46,7 @@ Page({
       } else {
         sum = res.data.total
       }
-      for(var i in res.data.cards){
+      for(var i = 0; i < res.data.cards.length; i++){
         res.data.cards[i]['cardClassText'] = util.classParam2Text(res.data.cards[i].cardClass)
         res.data.cards[i]['cardTypeText'] = util.typeParam2Text(res.data.cards[i].cardType)
         res.data.cards[i]['cardSetText'] = util.setParam2Text(res.data.cards[i].cardSet)
@@ -55,7 +57,6 @@ Page({
         total: sum,
         classTotal: Object.keys(res.data.totalPerClass).length
       })
-      // console.log(Object.keys(res.data.totalPerClass).length)
     })
   },
   onReachBottom: function(){
@@ -64,9 +65,11 @@ Page({
     if(this.data.params.p > 1){
       util.GET('action/cards/query', this.data.params, function(res) {
         console.log(res)
-        that.data.params.p = res.data.nextPage
+        that.setData({
+          'params.p': res.data.nextPage
+        })
         console.log(that.data.params)
-        for(var i in res.data.cards){
+        for(var i = 0; i < res.data.cards.length; i++){
           res.data.cards[i]['cardClassText'] = util.classParam2Text(res.data.cards[i].cardClass)
           res.data.cards[i]['cardTypeText'] = util.typeParam2Text(res.data.cards[i].cardType)
           res.data.cards[i]['cardSetText'] = util.setParam2Text(res.data.cards[i].cardSet)
@@ -75,13 +78,17 @@ Page({
           cardList: that.data.cardList.concat(res.data.cards)
         })
       })  
-    } else if(this.data.isAllClass && (this.data.classCount) < this.data.classTotal) {      
-        this.data.params.cardClass = Object.keys(this.data.totalPerClass)[this.data.classCount]
+    } else if(this.data.isAllClass && (this.data.classCount) < this.data.classTotal) {
+        this.setData({
+          'params.cardClass': Object.keys(this.data.totalPerClass)[this.data.classCount]
+        })
         util.GET('action/cards/query', this.data.params, function(res) {
         console.log(res)
-        that.data.params.p = res.data.nextPage
+        that.setData({
+          'params.p': res.data.nextPage
+        })
         console.log(that.data.params)
-        for(var i in res.data.cards){
+        for(var i = 0; i < res.data.cards.length; i++){
           res.data.cards[i]['cardClassText'] = util.classParam2Text(res.data.cards[i].cardClass)
           res.data.cards[i]['cardTypeText'] = util.typeParam2Text(res.data.cards[i].cardType)
           res.data.cards[i]['cardSetText'] = util.setParam2Text(res.data.cards[i].cardSet)
@@ -93,5 +100,4 @@ Page({
       this.data.classCount ++
     }
   }
-  
 })

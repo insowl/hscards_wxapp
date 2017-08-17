@@ -1,4 +1,11 @@
 <view class="container">
+  <picker range="{{classItems}}" range-key="{{'value'}}" value="{{classIndex}}" bindchange="classPickerChange">
+    <text>职业：{{classItems[classIndex].value}}</text>
+  </picker>
+  <picker range="{{costItems}}" range-key="{{'value'}}" value="{{costIndex}}" bindchange="costPickerChange">
+    <text>水晶消耗：{{costItems[costIndex].value}}</text>  
+  </picker>
+  <!--
   <radio-group class="cardClass" bindchange="classChange">
     <label class="classRadio" wx:for="{{classItems}}" wx:key="name">
       <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
@@ -9,6 +16,7 @@
       <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
     </label>
   </radio-group>
+  -->
   <radio-group class="cardStandard" bindchange="standardChange">
     <label class="standardRadio" wx:for="{{standardItems}}" wx:key="name">
       <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
