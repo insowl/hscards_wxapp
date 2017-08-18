@@ -1,11 +1,19 @@
 <view class="container">
   <picker range="{{classItems}}" range-key="{{'value'}}" value="{{classIndex}}" bindchange="classPickerChange">
-    <text>职业：{{classItems[classIndex].value}}</text>
+    <view class="picker">
+      <view class="title">职业：</view>
+      <view class="content">{{classItems[classIndex].value}}<image class="icon" src="../../icons/arrow_down.png" mode="aspectFit"></image></view>
+    </view>
   </picker>
   <picker range="{{costItems}}" range-key="{{'value'}}" value="{{costIndex}}" bindchange="costPickerChange">
-    <text>水晶消耗：{{costItems[costIndex].value}}</text>  
+    <view class="title">水晶：</view>
+    <view class="content">{{costItems[costIndex].value}}<image class="icon" src="../../icons/arrow_down.png" mode="aspectFit"></image></view>   
   </picker>
-  <!--
+  <picker range="{{standardItems}}" range-key="{{'value'}}" value="{{standardIndex}}" bindchange="standardPickerChange">
+    <view class="title">模式：</view>
+    <view class="content">{{standardItems[standardIndex].value}}<image class="icon" src="../../icons/arrow_down.png" mode="aspectFit"></image></view>   
+  </picker>
+  <!-- 单选按钮
   <radio-group class="cardClass" bindchange="classChange">
     <label class="classRadio" wx:for="{{classItems}}" wx:key="name">
       <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
@@ -16,12 +24,12 @@
       <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
     </label>
   </radio-group>
-  -->
   <radio-group class="cardStandard" bindchange="standardChange">
     <label class="standardRadio" wx:for="{{standardItems}}" wx:key="name">
       <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
     </label>
   </radio-group>
-  <input type="text" placeholder="请输入关键字" maxlength='12' confirm-type='search' bindblur='bindBlur'/>
+  -->
+  <input type="text" placeholder="请输入关键字" maxlength='12' confirm-type='search' bindinput='bindInput' bindconfirm='bindConfirm'/>
   <button type="primary" size="defaultSize" bindtap="doSearch" >搜索</button>
 </view>

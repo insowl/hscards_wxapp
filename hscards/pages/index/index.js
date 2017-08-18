@@ -2,6 +2,7 @@ Page({
   data: {
     classIndex: 0,
     costIndex: 0,
+    standardIndex: 0,
     classItems: [
       {name: '', value: '全部', checked: 'true'},
       {name: 'druid', value: '德鲁伊'},
@@ -53,6 +54,16 @@ Page({
     })
     console.log(this.data.costIndex + this.data.cardCost)
   },
+  standardPickerChange: function(e){
+    this.setData({
+      standardIndex: e.detail.value,
+    })
+    this.setData({
+      cardStandard: this.data.standardItems[this.data.standardIndex].name
+    })
+    console.log(this.data.standardIndex + this.data.cardStandard)
+  },
+/* 单选按钮
   classChange: function(e) {
     this.setData({
       cardClass: e.detail.value
@@ -68,9 +79,18 @@ Page({
       cardStandard: e.detail.value
     })
   },
-  bindBlur: function(e){
+*/  
+  bindInput: function(e){
     this.setData({
       keywords: e.detail.value
+    })
+  },
+  bindConfirm: function(e){
+    this.setData({
+      keywords: e.detail.value
+    })
+    wx.navigateTo({
+      url: "../list/list?cardClass="+this.data.cardClass+"&cost="+this.data.cardCost+"&standard="+this.data.cardStandard+"&keywords="+this.data.keywords
     })
   },
   doSearch: function(){
@@ -79,7 +99,7 @@ Page({
     console.log('standard=' + this.data.cardStandard)
     console.log('keywords=' + this.data.keywords)
     wx.navigateTo({
-        url: "../list/list?cardClass="+this.data.cardClass+"&cost="+this.data.cardCost+"&standard="+this.data.cardStandard+"&keywords="+this.data.keywords
+      url: "../list/list?cardClass="+this.data.cardClass+"&cost="+this.data.cardCost+"&standard="+this.data.cardStandard+"&keywords="+this.data.keywords
     })
   }
 })

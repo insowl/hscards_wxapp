@@ -1,10 +1,20 @@
 <!--logs.wxml-->
-<view class="container log-list">
-  <view>共搜索到{{total}}张卡牌（职业：{{text.cardClass}} | 消耗水晶：{{text.cost}} | 关键字：{{params.keywords}} | {{text.standard}}）</view>
+<view class="container">
+  <view>共搜索到{{total}}张卡牌</view>
+  <view>{{text.cardClass}}|{{text.cost}}费|{{text.standard}}|关键字：{{params.keywords}}</view>
   <block wx:for="{{cardList}}" wx:for-item="card" wx:key="*this">
-    <image src="{{card.imageUrl}}" mode="widthFix"/>
-    <text class="log-item">{{card.cardClassText}}</text>
-    <text class="log-item">{{card.cardTypeText}}</text>
-    <text class="log-item">{{card.cardSetText}}</text>
+    <view class="list-item" >
+      <image src="{{card.imageUrl}}" mode="widthFix"/>
+      <view class="line">
+        <view class="line11">职业</view>
+        <view class="line12">{{card.cardClassText}}</view>
+        <view class="line13">类型</view>
+        <view class="line14">{{card.cardTypeText}}</view>        
+      </view>
+      <view class="line">
+        <view class="line21">扩展包</view>
+        <view class="line22">{{card.cardSetText}}</view>
+      </view>
+    </view>
   </block>
 </view>

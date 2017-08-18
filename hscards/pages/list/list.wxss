@@ -1,8 +1,27 @@
-.log-list {
-  display: flex;
-  flex-direction: column;
-  padding: 40rpx;
+.container {
+    padding: 20rpx;
 }
-.log-item {
-  margin: 10rpx;
+
+.list-item{
+    margin: 10rpx;
+    border-top: solid 30rpx #eee;
+}
+
+.line {
+    margin: 10rpx 20rpx;
+    text-align: center;
+} 
+
+.line11, .line12, .line13, .line14, .line21{
+    float: left;
+    width: 25%;
+}
+
+.line22 {
+    float: left;
+    width: 75%;
+}
+
+.line11, .line13, .line21 {
+    font-weight: bold;
 }

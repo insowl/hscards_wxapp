@@ -72,7 +72,7 @@ function classParam2Text(param){
             text = '中立'
             break;
         default:
-            text = '全部'
+            text = '全部职业'
     }
     return text
 }
