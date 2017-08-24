@@ -2,8 +2,13 @@
     padding: 20rpx;
 }
 
+.list-view {
+    width: 100%;
+}
+
 .list-item{
-    margin: 10rpx;
+    width: 50%;
+    float: left;
     border-top: solid 30rpx #eee;
 }
 
