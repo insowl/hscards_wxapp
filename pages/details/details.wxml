@@ -3,19 +3,27 @@
   <view class="card-info">
     <view class="line">
       <view class="title">职业</view>
-      <view class="content">{{card.cardClassText}}</view>
+      <view class="content">{{cardClass[card.cardClass]}}</view>
     </view>
     <view class="line">
       <view class="title">类型</view>
-      <view class="content">{{card.cardTypeText}}</view>
+      <view class="content">{{cardType[card.cardType]}}</view>
+    </view>
+    <view class="line">
+      <view class="title">品质</view>
+      <view class="content">{{cardRarity[card.cardRarity]}}</view>
     </view>
     <view class="line">
       <view class="title">扩展包</view>
-      <view class="content">{{card.cardSetText}}</view>
+      <view class="content">{{cardSet[card.cardSet]}}</view>
     </view>
     <view class="line">
       <view class="title">画家</view>
       <view class="content">{{card.artist}}</view>
     </view>
+    <view class="block">{{card.background}}</view>
   </view>
+  <button type="primary" size="defaultSize" open-type="share" >分享卡牌</button>
+  <button type="primary" size="defaultSize" bindtap="back2Index" >继续搜索</button>
+  <view class="sign">炉石卡牌集 © ywxv.</view>
 </view>

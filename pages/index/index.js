@@ -40,21 +40,17 @@ Page({
       keywords: '',
       p: 1
     },
-    isAllClass: true,
+    isSearchNotMatch: true,
     totalPerClass: {},
     total: 0,
     classTotal: 0,
-    classCount: 1
+    classCount: 1,
+    text: '全部'
   },
   onLoad: function(option){
-
+    this.searchRequest()
   },
   classPickerChange: function(e){
-    if(e.detail.value > 1){
-      this.setData({
-        isAllClass: false
-      })
-    }
     this.setData({
       classIndex: e.detail.value,
     })
@@ -62,6 +58,7 @@ Page({
       'params.cardClass': this.data.classItems[this.data.classIndex].name
     })
     console.log(this.data.classIndex + this.data.params.cardClass)
+    this.searchRequest()
   },
   costPickerChange: function(e){
     this.setData({
@@ -71,6 +68,7 @@ Page({
       'params.cost': this.data.costItems[this.data.costIndex].name
     })
     console.log(this.data.costIndex + this.data.params.cost)
+    this.searchRequest()
   },
   standardPickerChange: function(e){
     this.setData({
@@ -80,6 +78,7 @@ Page({
       'params.cardStandard': this.data.standardItems[this.data.standardIndex].name
     })
     console.log(this.data.standardIndex + this.data.params.cardStandard)
+    this.searchRequest()
   },
   bindInput: function(e){
     this.setData({
@@ -98,7 +97,7 @@ Page({
   onReachBottom: function(){
     if(this.data.params.p > 1){
       this.pageRequest()
-    } else if(this.data.isAllClass && (this.data.classCount) < this.data.classTotal) {
+    } else if(this.data.isSearchNotMatch && (this.data.classCount) < this.data.classTotal) {
       this.setData({
         'params.cardClass': Object.keys(this.data.totalPerClass)[this.data.classCount]
       })
@@ -110,8 +109,19 @@ Page({
   nav2Detail: function(e){
     var cardStr = JSON.stringify(e.currentTarget.dataset.card)    
     wx.navigateTo({
-      url: "../details/details?card=" + encodeURIComponent(cardStr)
+      url: "../details/details?fromShare=0&card=" + encodeURIComponent(cardStr)
     })
+  },
+  onShareAppMessage: function(res){
+    return{
+      path: '/pages/index/index',
+      success: function(res) {
+        
+      },
+      fail: function(res) {
+        
+      }
+    }
   },
   //主动搜索请求
   searchRequest: function(){
@@ -125,18 +135,24 @@ Page({
       that.setData({
         'params.p': res.data.nextPage
       })
+      if(res.data.curCardClass == that.data.params.cardClass){
+        that.setData({
+          isSearchNotMatch: false,
+          text: '当前'
+        })
+      } else {
+        that.setData({
+          isSearchNotMatch: true,
+          text: '全部'
+        })
+      }
       var sum = 0
-      if(that.data.isAllClass){
+      if(that.data.isSearchNotMatch){
         for(var i in res.data.totalPerClass){
           sum += res.data.totalPerClass[i]
         }
       } else {
         sum = res.data.total
-      }
-      for(var i = 0; i < res.data.cards.length; i++){
-        res.data.cards[i]['cardClassText'] = util.classParam2Text(res.data.cards[i].cardClass)
-        res.data.cards[i]['cardTypeText'] = util.typeParam2Text(res.data.cards[i].cardType)
-        res.data.cards[i]['cardSetText'] = util.setParam2Text(res.data.cards[i].cardSet)
       }
       that.setData({
         cardList: res.data.cards,
@@ -155,11 +171,6 @@ Page({
       that.setData({
         'params.p': res.data.nextPage
       })
-      for(var i = 0; i < res.data.cards.length; i++){
-        res.data.cards[i]['cardClassText'] = util.classParam2Text(res.data.cards[i].cardClass)
-        res.data.cards[i]['cardTypeText'] = util.typeParam2Text(res.data.cards[i].cardType)
-        res.data.cards[i]['cardSetText'] = util.setParam2Text(res.data.cards[i].cardSet)
-      }
       that.setData({
         cardList: that.data.cardList.concat(res.data.cards)
       })

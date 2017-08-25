@@ -5,12 +5,12 @@
 .card-info {
   padding: 10rpx 75rpx;
   background-color: #eee;
+  font-size: 36rpx;
 }
 
 .line {
   height: 70rpx;
   width: 600rpx;
-  font-size: 36rpx;
   border-bottom: solid 1rpx #ddd;
 }
 
@@ -32,4 +32,22 @@
   margin-top: 10rpx;
   text-align: center;
   float: left;
+}
+
+.block {
+  line-height: 50rpx;
+  padding-top: 50rpx;
+  padding-bottom: 50rpx;
+  font-style: italic;
+}
+
+button {
+  margin: 50rpx 75rpx;
+}
+
+.sign {
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  font-size: 24rpx;
 }

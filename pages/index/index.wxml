@@ -24,7 +24,7 @@
     <view class="button" bindtap="doSearch" >搜索</view>
   </view>
   <view class="list-view">
-    <view class="result">共搜索到{{total}}张卡牌</view>
+    <view class="result">{{text}}职业：共{{total}}张卡牌</view>
     <block wx:for="{{cardList}}" wx:for-item="card" wx:key="*this">
       <view class="list-item" bindtap="nav2Detail" data-card="{{card}}">
         <image class="card-img" src="{{card.imageUrl}}" mode="scaleToFill" style="width: 280rpx; height: 400rpx;"/>
