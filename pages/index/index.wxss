@@ -1,44 +1,103 @@
 .container {
-  padding: 60rpx 100rpx;
+  width: 100%;
+}
+
+.pickers {
+  width: 100%;
+  height: 80rpx;
+  background-color: #eee;
+  position: fixed;
 }
 
 picker {
-  width: 100%;
-}
-
-.picker {
-  height: 100%;
-  width: 100%;
-}
-
-.title {
+  width: 249rpx;
+  height: 80rpx;
   float: left;
-  width: 25%;
-  padding: 5%;
+  font-size: 36rpx;
 }
 
 .content {
+  width: 249rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-top: 10rpx;
+  border-right: solid 1rpx #ddd;
+}
+
+.text {
   float: left;
-  width: 55%;
-  padding: 5%;
+  margin-left: 30rpx;
 }
 
 .icon {
   float: right;
   width: 36rpx;
   height: 36rpx;
-  margin: 2%;
+  margin-top: 10rpx;
+  margin-right: 30rpx;
+}
+
+.form {
+  margin-top: 80rpx;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: solid 1rpx #eee;
+  background-color: white;
+  position: fixed;
 }
 
 input {
-  width: 90%;
-  margin: 25rpx;
-  padding: 15rpx;
+  float: left;
+  width: 450rpx;
+  height: 60rpx;
+  margin-left: 30rpx;
+  margin-top: 10rpx;
+  margin-right: 30rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
   border: solid 1rpx #888;
-  border-radius: 10rpx;
+  border-radius: 30rpx;
+  font-size: 36rpx;
 }
 
-button {
-  width: 95%;
-  margin-top: 20rpx;
+.button {
+  float: left;
+  width: 150rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: white;
+  margin-top: 10rpx;
+  background-color: #09bb07;
+  border-radius: 20rpx;
+}
+
+.list-view {
+  margin-top: 160rpx;
+  width: 100%;
+}
+
+.result {
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.list-item{
+  width: 50%;
+  float: left;
+  border-top: solid 20rpx white;
+  border-bottom: solid 20rpx white;
+}
+
+.card-img {
+  margin-left: 45rpx;
+}
+
+.card-name {
+  text-align:center;
+  font-size: 36rpx;
 }

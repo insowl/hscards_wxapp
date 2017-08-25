@@ -7,11 +7,11 @@ var POST_HEADER = {
         }
 
 function request(api, method, header, params, success){
-    wx.showToast({
-        icon: "loading",
-        title: "旅店老板正在搜索牌库...",
-        duration: 10000
-    })
+    // wx.showToast({
+    //     icon: "loading",
+    //     title: "旅店老板正在搜索牌库...",
+    //     duration: 10000
+    // })
     wx.request({
         url: baseURL + api,
         method: method,
@@ -24,7 +24,8 @@ function request(api, method, header, params, success){
         fail: function(){
             wx.showToast({
                 icon: "loading",
-                title: "炉石旅店断网了..."
+                title: "炉石旅店断网了...",
+                duration: 6000
             })
         }
     })

@@ -1,0 +1,21 @@
+<view>
+  <image class="card-img" src="{{card.imageUrl}}" mode="scaleToFill" style="width: 560rpx; height: 800rpx;"/>
+  <view class="card-info">
+    <view class="line">
+      <view class="title">职业</view>
+      <view class="content">{{card.cardClassText}}</view>
+    </view>
+    <view class="line">
+      <view class="title">类型</view>
+      <view class="content">{{card.cardTypeText}}</view>
+    </view>
+    <view class="line">
+      <view class="title">扩展包</view>
+      <view class="content">{{card.cardSetText}}</view>
+    </view>
+    <view class="line">
+      <view class="title">画家</view>
+      <view class="content">{{card.artist}}</view>
+    </view>
+  </view>
+</view>

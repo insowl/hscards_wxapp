@@ -1,35 +1,35 @@
 <view class="container">
-  <picker range="{{classItems}}" range-key="{{'value'}}" value="{{classIndex}}" bindchange="classPickerChange">
-    <view class="picker">
-      <view class="title">职业：</view>
-      <view class="content">{{classItems[classIndex].value}}<image class="icon" src="../../icons/arrow_down.png" mode="aspectFit"></image></view>
-    </view>
-  </picker>
-  <picker range="{{costItems}}" range-key="{{'value'}}" value="{{costIndex}}" bindchange="costPickerChange">
-    <view class="title">水晶：</view>
-    <view class="content">{{costItems[costIndex].value}}<image class="icon" src="../../icons/arrow_down.png" mode="aspectFit"></image></view>   
-  </picker>
-  <picker range="{{standardItems}}" range-key="{{'value'}}" value="{{standardIndex}}" bindchange="standardPickerChange">
-    <view class="title">模式：</view>
-    <view class="content">{{standardItems[standardIndex].value}}<image class="icon" src="../../icons/arrow_down.png" mode="aspectFit"></image></view>   
-  </picker>
-  <!-- 单选按钮
-  <radio-group class="cardClass" bindchange="classChange">
-    <label class="classRadio" wx:for="{{classItems}}" wx:key="name">
-      <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
-    </label>
-  </radio-group>
-  <radio-group class="cardCost" bindchange="costChange">
-    <label class="costRadio" wx:for="{{costItems}}" wx:key="name">
-      <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
-    </label>
-  </radio-group>
-  <radio-group class="cardStandard" bindchange="standardChange">
-    <label class="standardRadio" wx:for="{{standardItems}}" wx:key="name">
-      <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
-    </label>
-  </radio-group>
-  -->
-  <input type="text" placeholder="请输入关键字" maxlength='12' confirm-type='search' bindinput='bindInput' bindconfirm='bindConfirm'/>
-  <button type="primary" size="defaultSize" bindtap="doSearch" >搜索</button>
+  <view class="pickers">
+    <picker range="{{classItems}}" range-key="{{'value'}}" value="{{classIndex}}" bindchange="classPickerChange">
+      <view class="content">
+        <view class="text">{{classItems[classIndex].value}}</view>
+        <image class="icon" src="../../icons/arrow_down.png" mode="aspectFit"></image>
+      </view>
+    </picker>
+    <picker range="{{costItems}}" range-key="{{'value'}}" value="{{costIndex}}" bindchange="costPickerChange">
+      <view class="content">
+        <view class="text">{{costItems[costIndex].value}}</view>
+        <image class="icon" src="../../icons/arrow_down.png" mode="aspectFit"></image>
+      </view>   
+    </picker>
+    <picker range="{{standardItems}}" range-key="{{'value'}}" value="{{standardIndex}}" bindchange="standardPickerChange">
+      <view class="content">
+        <view class="text">{{standardItems[standardIndex].value}}</view>
+        <image class="icon" src="../../icons/arrow_down.png" mode="aspectFit"></image>
+      </view>   
+    </picker>
+  </view>
+  <view class="form">
+    <input type="text" placeholder="请输入关键字" maxlength='12' confirm-type='search' bindinput='bindInput' bindconfirm='bindConfirm'/>
+    <view class="button" bindtap="doSearch" >搜索</view>
+  </view>
+  <view class="list-view">
+    <view class="result">共搜索到{{total}}张卡牌</view>
+    <block wx:for="{{cardList}}" wx:for-item="card" wx:key="*this">
+      <view class="list-item" bindtap="nav2Detail" data-card="{{card}}">
+        <image class="card-img" src="{{card.imageUrl}}" mode="scaleToFill" style="width: 280rpx; height: 400rpx;"/>
+        <view class="card-name">{{card.name}}</view>
+      </view>
+    </block>
+  </view>
 </view>
