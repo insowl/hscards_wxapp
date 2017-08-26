@@ -30,6 +30,7 @@ Page({
     cardSet: {
       'basic': '基本',
       'classic': '经典',
+      'honors': '荣誉室',
       'naxx': '纳克萨玛斯',
       'gvg': '地精大战侏儒',
       'brm': '黑石山的火焰',

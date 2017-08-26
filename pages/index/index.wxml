@@ -32,4 +32,5 @@
       </view>
     </block>
   </view>
+  <view class="loading" wx:if="{{showLoading}}">正在搜索更多卡牌...</view>
 </view>

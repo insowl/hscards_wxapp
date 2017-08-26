@@ -14,7 +14,7 @@
       <view class="content">{{cardRarity[card.cardRarity]}}</view>
     </view>
     <view class="line">
-      <view class="title">扩展包</view>
+      <view class="title">合集</view>
       <view class="content">{{cardSet[card.cardSet]}}</view>
     </view>
     <view class="line">

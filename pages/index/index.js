@@ -40,12 +40,14 @@ Page({
       keywords: '',
       p: 1
     },
+    cardList: [],
     isSearchNotMatch: true,
     totalPerClass: {},
     total: 0,
     classTotal: 0,
     classCount: 1,
-    text: '全部'
+    text: '全部',
+    showLoading: false
   },
   onLoad: function(option){
     this.searchRequest()
@@ -75,9 +77,9 @@ Page({
       standardIndex: e.detail.value,
     })
     this.setData({
-      'params.cardStandard': this.data.standardItems[this.data.standardIndex].name
+      'params.standard': this.data.standardItems[this.data.standardIndex].name
     })
-    console.log(this.data.standardIndex + this.data.params.cardStandard)
+    console.log(this.data.standardIndex + this.data.params.standard)
     this.searchRequest()
   },
   bindInput: function(e){
@@ -126,10 +128,18 @@ Page({
   //主动搜索请求
   searchRequest: function(){
     this.setData({
-      'params.p': 1
+      'params.cardClass': this.data.classItems[this.data.classIndex].name,
+      'params.p': 1,
+      cardList: [],
+      classTotal: 0,
+      classCount: 1,
     })
     var that = this
+    wx.showLoading({
+      title: "正在搜索卡牌"
+    })
     util.GET('action/cards/query', this.data.params, function(res) {
+      wx.hideLoading()
       console.log(that.data.params)
       console.log(res)
       that.setData({
@@ -165,11 +175,15 @@ Page({
   //翻页搜索请求
   pageRequest: function(){
     var that = this
+    this.setData({
+      showLoading: true
+    })
     util.GET('action/cards/query', this.data.params, function(res) {
       console.log(that.data.params)
       console.log(res)
       that.setData({
-        'params.p': res.data.nextPage
+        'params.p': res.data.nextPage,
+        showLoading: false
       })
       that.setData({
         cardList: that.data.cardList.concat(res.data.cards)
