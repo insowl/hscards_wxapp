@@ -40,7 +40,8 @@ Page({
       'karazhan': '卡拉赞之夜',
       'msog': '龙争虎斗加基森',
       'ungoro': '勇闯安戈洛',
-      'kotf': '冰封王座的骑士'
+      'kotf': '冰封王座的骑士',
+      'kobolds-catacombs': '狗头人与地下世界'
     }
   },
   onLoad: function(option) {
