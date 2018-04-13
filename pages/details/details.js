@@ -41,7 +41,8 @@ Page({
       'msog': '龙争虎斗加基森',
       'ungoro': '勇闯安戈洛',
       'kotf': '冰封王座的骑士',
-      'kobolds-catacombs': '狗头人与地下世界'
+      'kobolds-catacombs': '狗头人与地下世界',
+      'the-witchwood': '女巫森林'
     }
   },
   onLoad: function(option) {
