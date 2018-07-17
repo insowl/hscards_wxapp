@@ -7,6 +7,7 @@
   height: 80rpx;
   background-color: white;
   position: fixed;
+  z-index: 99;
 }
 
 picker {
@@ -45,6 +46,7 @@ picker {
   border-bottom: solid 1rpx #eee;
   background-color: white;
   position: fixed;
+  z-index: 99;
 }
 
 input {
@@ -110,3 +112,16 @@ input {
   border-top: solid 1rpx #eee;
   font-size: 36rpx;
 }
+
+.ad-bar {
+  /* position: fixed;
+  bottom: 0; */
+  width: 750rpx;
+  z-index: 9;
+}
+/* 
+.ad-bar .close {
+  float: right;
+  font-size: 22rpx;
+  color: #888;
+} */

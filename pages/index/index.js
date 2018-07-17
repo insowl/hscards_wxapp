@@ -47,7 +47,8 @@ Page({
     classTotal: 0,
     classCount: 1,
     text: '全部',
-    showLoading: false
+    showLoading: false,
+    showAd: true
   },
   onLoad: function(option){
     this.searchRequest()
@@ -188,6 +189,11 @@ Page({
       that.setData({
         cardList: that.data.cardList.concat(res.data.cards)
       })
+    })
+  },
+  closeAd: function(){
+    this.setData({
+      showAd: false
     })
   }
 })
