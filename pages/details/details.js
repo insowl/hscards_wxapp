@@ -42,8 +42,10 @@ Page({
       'ungoro': '勇闯安戈洛',
       'kotf': '冰封王座的骑士',
       'kobolds-catacombs': '狗头人与地下世界',
-      'the-witchwood': '女巫森林'
-    }
+      'the-witchwood': '女巫森林',
+      'boomsday-project': '砰砰计划'
+    },
+    showPanel: false
   },
   onLoad: function(option) {
     var that = this
@@ -78,5 +80,30 @@ Page({
         
       }
     }
+  },
+  share2Moment: function(){
+    this.setData({
+      showPanel: true
+    })
+    // wx.getImageInfo({
+    //   src: this.data.card.imageUrl,
+    //   success: function(res){
+    //     const ctx = wx.createCanvasContext('shareCanvas')
+    //     ctx.drawImage(res.path, 0, 0, 300, 425)
+    //     ctx.draw()
+    //   }
+    // })
+    const ctx = wx.createCanvasContext('shareCanvas')
+    ctx.setTextAlign('center')    // 文字居中
+    ctx.setFillStyle('#000000')  // 文字颜色：黑色
+    ctx.setFontSize(22)         // 文字字号：22px
+    ctx.fillText(this.data.card.name, 150, 30)
+    ctx.stroke()
+    ctx.draw()
+  },
+  closePanel: function(){
+    this.setData({
+      showPanel: false
+    })
   }
 })

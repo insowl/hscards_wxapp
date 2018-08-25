@@ -1,4 +1,4 @@
-<view>
+<view class="main-content">
   <image class="card-img" src="{{card.imageUrl}}" mode="scaleToFill" style="width: 560rpx; height: 800rpx;"/>
   <view class="card-info">
     <view class="line">
@@ -26,7 +26,22 @@
   <view class="ad">
     <ad unit-id="adunit-bdee78dbd8418d8d"></ad>
   </view>
-  <button type="primary" size="defaultSize" open-type="share" >分享卡牌</button>
-  <button type="primary" size="defaultSize" bindtap="back2Index" >继续搜索</button>
+  <button type="primary" size="defaultSize" open-type="share">分享卡牌</button>
+  <!-- <button type="primary" size="defaultSize" bindtap="share2Moment">分享到朋友圈</button> -->
+  <button type="primary" size="defaultSize" bindtap="back2Index">继续搜索</button>
   <view class="sign">炉石卡牌集 © ywxv.</view>
+</view>
+<view class="extra-panel" wx:if="{{showPanel}}">
+  <view class="panel-bg" bindtap="closePanel"></view>
+  <view class="panel-main">
+    <view class="panel-head">
+      <view class="panel-title">分享到朋友圈</view>
+      <image class="close-icon" src="../../icons/close.png" bindtap="closePanel"></image>
+    </view>
+    <view class="panel-img">
+      <canvas canvas-id="shareCanvas" style="width:300px;height:200px;"></canvas>
+    </view>
+    <button class="panel-btn" type="primary" size="defaultSize" bindtap="saveImg">保存图片</button>
+    <view class="panel-text">保存图片到手机后，您可以到朋友圈分享该卡牌图片</view>
+  </view>
 </view>
