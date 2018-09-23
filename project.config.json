@@ -8,9 +8,9 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.94",
+	"libVersion": "2.3.0",
 	"appid": "wxb35aa69465f737d4",
-	"projectname": "%E7%82%89%E7%9F%B3%E5%8D%A1%E7%89%8C%E6%90%9C",
+	"projectname": "%E7%82%89%E7%9F%B3%E5%8D%A1%E7%89%8C%E9%9B%86",
 	"scripts": {},
 	"condition": {
 		"search": {
