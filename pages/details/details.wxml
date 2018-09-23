@@ -3,19 +3,19 @@
   <view class="card-info">
     <view class="line">
       <view class="title">职业</view>
-      <view class="content">{{cardClass[card.cardClass]}}</view>
+      <view class="content">{{config.cardClass[card.cardClass]}}</view>
     </view>
     <view class="line">
       <view class="title">类型</view>
-      <view class="content">{{cardType[card.cardType]}}</view>
+      <view class="content">{{config.cardType[card.cardType]}}</view>
     </view>
     <view class="line">
       <view class="title">品质</view>
-      <view class="content">{{cardRarity[card.cardRarity]}}</view>
+      <view class="content">{{config.cardRarity[card.cardRarity]}}</view>
     </view>
     <view class="line">
       <view class="title">合集</view>
-      <view class="content">{{cardSet[card.cardSet]}}</view>
+      <view class="content">{{config.cardSet[card.cardSet]}}</view>
     </view>
     <view class="line">
       <view class="title">画家</view>
