@@ -8,11 +8,22 @@ Page({
     card: {},
     showPanel: false
   },
-  onLoad: function(option) {
-    this.setData({
-      config: app.globalData.config
-    })
+  onLoad: function (option) {
     var that = this
+    if(app.globalData.config){
+      this.setData({
+        config: app.globalData.config
+      })
+    }else{
+      wx.cloud.callFunction({
+        name: 'updateConfig',
+        success: function (res) {
+          that.setData({
+            config: res.result
+          })
+        }
+      })
+    }
     var cardStr = decodeURIComponent(option.card)
     this.setData({
       fromShare: option.fromShare,
