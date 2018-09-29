@@ -27,7 +27,7 @@
     <ad unit-id="adunit-bdee78dbd8418d8d"></ad>
   </view>
   <button type="primary" size="defaultSize" open-type="share">分享卡牌</button>
-  <!-- <button type="primary" size="defaultSize" bindtap="share2Moment">分享到朋友圈</button> -->
+  <button type="primary" size="defaultSize" bindtap="share2Moment">分享到朋友圈</button>
   <button type="primary" size="defaultSize" bindtap="back2Index">继续搜索</button>
   <view class="sign">炉石卡牌集 © ywxv.</view>
 </view>

@@ -60,6 +60,12 @@ Page({
     this.setData({
       showPanel: true
     })
+    wx.cloud.callFunction({
+      name: 'getPageCode',
+      success: function (res) {
+        console.log(res)
+      }
+    })
     // wx.getImageInfo({
     //   src: this.data.card.imageUrl,
     //   success: function(res){
