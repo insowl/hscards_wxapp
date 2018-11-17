@@ -32,7 +32,7 @@
     </view>
     <view class="result">{{text}}职业：共{{total}}张卡牌</view>
     <block wx:for="{{cardList}}" wx:for-item="card" wx:key="*this">
-      <view class="list-item" bindtap="nav2Detail" data-card="{{card}}">
+      <view class="list-item" bindtap="nav2Detail" data-card="{{card}}" data-name="{{card.name}}" data-cost='{{card.cost}}' data-cardclass='{{card.cardclass}}'>
         <image class="card-img" src="{{card.imageUrl}}" mode="scaleToFill" style="width: 280rpx; height: 400rpx;"/>
         <view class="card-name">{{card.name}}</view>
       </view>

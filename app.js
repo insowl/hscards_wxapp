@@ -14,7 +14,7 @@ App({
       wx.cloud.callFunction({
         name: 'updateConfig',
         success: function(res){
-          console.log(res.result)
+          // console.log(res.result)
           that.globalData.config = res.result
         }
       })

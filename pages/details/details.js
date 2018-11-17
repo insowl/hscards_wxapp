@@ -1,14 +1,14 @@
 const app = getApp()
+const util = require('../../utils/util.js')
 
 Page({
   data: {
     fromShare: 0,
-    paramsStr: '',
     config: {},
     card: {},
     showPanel: false
   },
-  onLoad: function (option) {
+  onLoad: function (options) {
     var that = this
     if(app.globalData.config){
       this.setData({
@@ -24,13 +24,29 @@ Page({
         }
       })
     }
-    var cardStr = decodeURIComponent(option.card)
+
     this.setData({
-      fromShare: option.fromShare,
-      paramsStr: option.card,
-      card: JSON.parse(cardStr)
+      fromShare: options.fromShare
     })
-    // console.log(this.data.card)
+				if(options.card){
+					let cardStr = decodeURIComponent(options.card)
+					this.setData({
+						paramsStr: options.card,
+						card: JSON.parse(cardStr)
+					})
+				} else{
+					let params = {
+						keywords: options.name,
+						cost: options.cost,
+						cardClass: options.cardclass
+					}
+					util.GET('action/cards/query', params, function (res) {
+						console.log(res)
+						that.setData({
+							card: res.data.cards[0]
+						})
+					})
+				}
   },
   back2Index: function(){
     if(this.data.fromShare == 1){
@@ -44,9 +60,10 @@ Page({
     }
   },
   onShareAppMessage: function(res){
+				let card = this.data.card
     return{
-      title: this.data.card.name,
-      path: '/pages/details/details?fromShare=1&card=' + this.data.paramsStr,
+      title: card.name,
+						path: `../details/details?fromShare=0&card=${this.data.paramsStr}`,
       imageUrl: this.data.card.imageUrl,
       success: function(res) {
         
@@ -60,8 +77,12 @@ Page({
     this.setData({
       showPanel: true
     })
+				let card = this.data.card
     wx.cloud.callFunction({
       name: 'getPageCode',
+						data: {
+							pagePath: `../details/details?fromShare=0&name=${card.name}&cost=${card.cost}&cardclass=${card.cardclass}`
+						},
       success: function (res) {
         console.log(res)
       }

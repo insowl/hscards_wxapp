@@ -10,6 +10,7 @@ function request(api, method, header, params, success){
     // wx.showLoading({
     //     title: "正在搜索卡牌"
     // })
+				wx.showNavigationBarLoading()
     wx.request({
         url: baseURL + api,
         method: method,
@@ -17,6 +18,7 @@ function request(api, method, header, params, success){
         data: params,
         success: function(res) {
             // wx.hideLoading()
+												wx.hideNavigationBarLoading()
             success(res)
         },
         fail: function(){

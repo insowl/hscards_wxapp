@@ -110,9 +110,11 @@ Page({
   },
   //列表项点击事件
   nav2Detail: function(e){
-    var cardStr = JSON.stringify(e.currentTarget.dataset.card)    
+    let cardStr = JSON.stringify(e.currentTarget.dataset.card)
+				let cardStrEncode = encodeURIComponent(cardStr)
+				let data = e.currentTarget.dataset  
     wx.navigateTo({
-      url: "../details/details?fromShare=0&card=" + encodeURIComponent(cardStr)
+					url: `../details/details?fromShare=0&card=${cardStrEncode}&name=${data.name}&cost=${data.cost}&cardclass=${data.cardclass}`
     })
   },
   onShareAppMessage: function(res){
@@ -136,11 +138,11 @@ Page({
       classCount: 1,
     })
     var that = this
-    wx.showLoading({
-      title: "正在搜索卡牌"
-    })
+    // wx.showLoading({
+    //   title: "正在搜索卡牌"
+    // })
     util.GET('action/cards/query', this.data.params, function(res) {
-      wx.hideLoading()
+      // wx.hideLoading()
       console.log(that.data.params)
       console.log(res)
       that.setData({
