@@ -39,7 +39,8 @@
       <image class="close-icon" src="../../icons/close.png" bindtap="closePanel"></image>
     </view>
     <view class="panel-img">
-      <canvas canvas-id="shareCanvas" style="width:300px;height:200px;"></canvas>
+      <canvas canvas-id="shareCanvas" style="width:400px;height:720px;transform: scale(0.5) translate(-100px, -180px);"></canvas>
+      <!-- <image src="{{bImg}}" class='test-img'></image> -->
     </view>
     <button class="panel-btn" type="primary" size="defaultSize" bindtap="saveImg">保存图片</button>
     <view class="panel-text">保存图片到手机后，您可以到朋友圈分享该卡牌图片</view>

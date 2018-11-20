@@ -1,12 +1,12 @@
 {
- "pages": [
-  "pages/index/index",
-  "pages/details/details"
- ],
- "window": {
-  "backgroundTextStyle": "light",
-  "navigationBarBackgroundColor": "#fff",
-  "navigationBarTitleText": "炉石卡牌集",
-  "navigationBarTextStyle": "black"
- }
+  "pages": [
+    "pages/index/index",
+    "pages/details/details"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "炉石卡牌集",
+    "navigationBarTextStyle": "black"
+  }
 }

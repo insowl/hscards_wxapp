@@ -97,8 +97,9 @@ button {
   margin-right: 30rpx;
 }
 
-.panel-image {
-  height: 500rpx;
+.panel-img {
+  width: 200px;
+  height: 360px;
 }
 
 
@@ -111,4 +112,9 @@ button {
   font-size: 26rpx;
   height: 60rpx;
   line-height: 60rpx;
+}
+
+.test-img {
+  height: 300rpx;
+  width: 300rpx;
 }

@@ -12,6 +12,7 @@
 	"appid": "wxb35aa69465f737d4",
 	"projectname": "%E7%82%89%E7%9F%B3%E5%8D%A1%E7%89%8C%E9%9B%86",
 	"scripts": {},
+	"cloudfunctionRoot": "cloudfunctions/",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -33,6 +34,5 @@
 			"current": -1,
 			"list": []
 		}
-	},
-	"cloudfunctionRoot": "./cloudfunctions/"
+	}
 }

@@ -28,42 +28,42 @@ Page({
     this.setData({
       fromShare: options.fromShare
     })
-				if(options.card){
-					let cardStr = decodeURIComponent(options.card)
-					this.setData({
-						paramsStr: options.card,
-						card: JSON.parse(cardStr)
-					})
-				} else{
-					let params = {
-						keywords: options.name,
-						cost: options.cost,
-						cardClass: options.cardclass
-					}
-					util.GET('action/cards/query', params, function (res) {
-						console.log(res)
-						that.setData({
-							card: res.data.cards[0]
-						})
-					})
-				}
+    if(options.card){
+      let cardStr = decodeURIComponent(options.card)
+      this.setData({
+        paramsStr: options.card,
+        card: JSON.parse(cardStr)
+      })
+    } else{
+      let params = {
+        keywords: options.name,
+        cost: options.cost,
+        cardClass: options.cardclass
+      }
+      util.GET('action/cards/query', params, function (res) {
+        console.log(res)
+        that.setData({
+          card: res.data.cards[0]
+        })
+      })
+    }
   },
   back2Index: function(){
-    if(this.data.fromShare == 1){
+    if(this.data.fromShare != 0){
       wx.reLaunch({
         url: '/pages/index/index'
       })
-    } else if(this.data.fromShare == 0){
+    } else{
       wx.navigateBack({
         delta: 1
       })
     }
   },
   onShareAppMessage: function(res){
-				let card = this.data.card
+    let card = this.data.card
     return{
       title: card.name,
-						path: `../details/details?fromShare=0&card=${this.data.paramsStr}`,
+						path: `../details/details?fromShare=1&card=${this.data.paramsStr}`,
       imageUrl: this.data.card.imageUrl,
       success: function(res) {
         
@@ -77,35 +77,69 @@ Page({
     this.setData({
       showPanel: true
     })
-				let card = this.data.card
+    let card = this.data.card
+    let that = this
     wx.cloud.callFunction({
       name: 'getPageCode',
-						data: {
-							pagePath: `../details/details?fromShare=0&name=${card.name}&cost=${card.cost}&cardclass=${card.cardclass}`
-						},
+      data: {
+        cardID: card.cardId,
+        cardImageUrl: card.imageUrl,
+        pagePath: `pages/details/details?fromShare=2&name=${card.name}&cost=${card.cost}&cardclass=${card.cardClass}`
+      },
       success: function (res) {
         console.log(res)
+        // that.setData({
+        //   bImg: res.result.fileID
+        // })
+        let that1 = that
+        // wx.getImageInfo({
+        //   src: res.result.fileID,
+        //   success: function(res){
+        //     // console.log(res)
+        //     const ctx = wx.createCanvasContext('shareCanvas')
+        //     // ctx.scale(0.5, 0.5)
+        //     ctx.drawImage(res.path, 40, 550, 160, 160)
+        //     ctx.setFillStyle('#000')
+        //     ctx.setFontSize(24)
+        //     ctx.fillText('炉石卡牌集', 220, 600)
+        //     ctx.setFillStyle('#999')
+        //     ctx.setFontSize(18)
+        //     ctx.fillText('长按识别小程序码', 220, 630)
+        //     ctx.fillText('查看卡牌详情', 220, 655)
+        //     let that2 = that1
+            // wx.getImageInfo({
+            //   src: that1.data.card.imageUrl,
+            //   success: function (res) {
+            //     console.log(res)
+            //     ctx.drawImage(res.path, 20, 20, 360, 510)
+            //     ctx.draw()
+            //   }
+            // })
+        //   }
+        // })
       }
     })
-    // wx.getImageInfo({
-    //   src: this.data.card.imageUrl,
-    //   success: function(res){
-    //     const ctx = wx.createCanvasContext('shareCanvas')
-    //     ctx.drawImage(res.path, 0, 0, 300, 425)
-    //     ctx.draw()
-    //   }
-    // })
-    const ctx = wx.createCanvasContext('shareCanvas')
-    ctx.setTextAlign('center')    // 文字居中
-    ctx.setFillStyle('#000000')  // 文字颜色：黑色
-    ctx.setFontSize(22)         // 文字字号：22px
-    ctx.fillText(this.data.card.name, 150, 30)
-    ctx.stroke()
-    ctx.draw()
   },
   closePanel: function(){
     this.setData({
       showPanel: false
     })
+  },
+  saveImg: function(){
+    wx.canvasToTempFilePath({
+      canvasId: 'shareCanvas',
+      fileType: 'jpg',
+      quality: 1,
+      success: function(res){
+        wx.saveImageToPhotosAlbum({
+          filePath: res.tempFilePath,
+          success: function(res){
+            wx.showToast({
+              title: '已保存',
+            })
+          }
+        })
+      }
+    }, this)
   }
 })
