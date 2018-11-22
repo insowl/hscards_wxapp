@@ -5,8 +5,8 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#151A27",
     "navigationBarTitleText": "炉石卡牌集",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "light"
   }
 }

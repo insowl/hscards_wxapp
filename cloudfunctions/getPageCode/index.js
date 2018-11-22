@@ -16,7 +16,13 @@ const genWXACode = async function(token, path){
         'content-type': 'application/json;'
       },
       body: JSON.stringify({
-        path: path
+        path: path,
+							 is_hyaline: true,
+							 line_color: {
+									'r': '14',
+									'g': '134',
+									'b': '202'
+								}
       })
     },function (error, response, body) {
       resolve(body)

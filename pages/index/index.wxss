@@ -5,7 +5,8 @@
 .pickers {
   width: 100%;
   height: 80rpx;
-  background-color: white;
+  background-color: #151A27;
+		color: #fff;
   position: fixed;
   z-index: 99;
 }
@@ -22,7 +23,6 @@ picker {
   height: 60rpx;
   line-height: 60rpx;
   margin-top: 10rpx;
-  border-right: solid 1rpx #ddd;
 }
 
 .text {
@@ -43,8 +43,9 @@ picker {
   width: 100%;
   height: 80rpx;
   line-height: 80rpx;
-  border-bottom: solid 1rpx #eee;
-  background-color: white;
+  border-bottom: solid 1rpx #151A27;
+  background-color: #151A27;
+		color: #fff;
   position: fixed;
   z-index: 99;
 }
@@ -58,7 +59,7 @@ input {
   margin-right: 30rpx;
   padding-left: 30rpx;
   padding-right: 30rpx;
-  border: solid 1rpx #888;
+  border: solid 1rpx #0E86CA;
   border-radius: 30rpx;
   font-size: 36rpx;
 }
@@ -70,15 +71,17 @@ input {
   line-height: 60rpx;
   text-align: center;
   font-size: 36rpx;
-  color: white;
+  color: #fff;
   margin-top: 10rpx;
-  background-color: #09bb07;
+  background-color: #0E86CA;
   border-radius: 20rpx;
 }
 
 .list-view {
   margin-top: 160rpx;
   width: 100%;
+		background-color: #293C5A;
+		color: #fff;
 }
 
 .result {
@@ -91,8 +94,8 @@ input {
 .list-item{
   width: 50%;
   float: left;
-  border-top: solid 20rpx white;
-  border-bottom: solid 20rpx white;
+  border-top: solid 20rpx #293C5A;
+  border-bottom: solid 20rpx #293C5A;
 }
 
 .card-img {
@@ -109,8 +112,9 @@ input {
   height: 100rpx;
   line-height: 100rpx;
   text-align: center;
-  border-top: solid 1rpx #eee;
+  border-top: solid 1rpx #0E86CA;
   font-size: 36rpx;
+		color: #fff;
 }
 
 .ad-bar {
