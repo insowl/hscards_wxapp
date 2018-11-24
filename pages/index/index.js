@@ -119,13 +119,9 @@ Page({
   },
   onShareAppMessage: function(res){
     return{
-      path: '/pages/index/index',
-      success: function(res) {
-        
-      },
-      fail: function(res) {
-        
-      }
+      title: '炉石传说卡牌全集',
+      path: 'pages/index/index',
+      imageUrl: '/icons/share_cover.jpg'
     }
   },
   //主动搜索请求

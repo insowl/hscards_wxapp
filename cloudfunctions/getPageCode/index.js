@@ -17,7 +17,7 @@ const genWXACode = async function(token, path){
       },
       body: JSON.stringify({
         path: path,
-							 is_hyaline: true,
+							//  is_hyaline: true,
 							 line_color: {
 									'r': '14',
 									'g': '134',

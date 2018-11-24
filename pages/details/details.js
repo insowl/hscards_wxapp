@@ -18,6 +18,7 @@ Page({
 			wx.cloud.callFunction({
 				name: 'updateConfig',
 				success: function (res) {
+          console.log(res)
 					that.setData({
 						config: res.result
 					})
@@ -31,7 +32,6 @@ Page({
 		if (options.card) {
 			let cardStr = decodeURIComponent(options.card)
 			this.setData({
-				paramsStr: options.card,
 				card: JSON.parse(cardStr)
 			})
 		} else {
@@ -60,17 +60,14 @@ Page({
 		}
 	},
 	onShareAppMessage: function (res) {
+    let config = this.data.config
 		let card = this.data.card
+    let cardStr = JSON.stringify(card)
+    let cardStrEncode = encodeURIComponent(cardStr)
 		return {
-			title: card.name,
-			path: `../details/details?fromShare=1&card=${this.data.paramsStr}`,
-			imageUrl: this.data.card.imageUrl,
-			success: function (res) {
-
-			},
-			fail: function (res) {
-
-			}
+      title: `${card.name} - ${config.cardClass[card.cardClass]}${config.cardType[card.cardType]}`,
+      path: `pages/details/details?fromShare=1&card=${cardStrEncode}`,
+			imageUrl: card.imageUrl
 		}
 	},
 	share2Moment: function () {
