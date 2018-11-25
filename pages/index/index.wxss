@@ -3,10 +3,12 @@
 }
 
 .pickers {
+  top: 0;
+  left: 0;
   width: 100%;
   height: 80rpx;
   background-color: #151A27;
-		color: #fff;
+  color: #fff;
   position: fixed;
   z-index: 99;
 }
@@ -39,13 +41,14 @@ picker {
 }
 
 .form {
-  margin-top: 80rpx;
+  top: 80rpx;
+  left: 0;
   width: 100%;
   height: 80rpx;
   line-height: 80rpx;
   border-bottom: solid 1rpx #151A27;
   background-color: #151A27;
-		color: #fff;
+  color: #fff;
   position: fixed;
   z-index: 99;
 }

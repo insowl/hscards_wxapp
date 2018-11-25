@@ -11,12 +11,6 @@ App({
           that.globalData.config = res.result
         }
       })
-      wx.cloud.callFunction({
-        name: 'getAppToken',
-        success: function(res){
-          console.log(res)
-        }
-      })
     },
     globalData: {
       config: null

@@ -38,7 +38,7 @@
 		</view>
   <button class="search" bindtap="back2Index">继续搜索</button>
   <view class="sign">炉石卡牌集 © ywxv.</view>
-		<canvas canvas-id='shareCanvas' class="share-canvas"></canvas>
+  <canvas canvas-id='shareCanvas' class="share-canvas"></canvas>
 </view>
 <view class="extra-panel" wx:if="{{showPanel}}" capture-catch:touchmove="touchMove">
   <view class="panel-bg" bindtap="closePanel"></view>
@@ -49,7 +49,6 @@
     </view>
     <view class="panel-img">
       <canvas canvas-id="showCanvas" class="img-canvas" disable-scroll="true" bindtouchmove="touchMove"></canvas>
-      <!-- <image src="{{bImg}}" class='test-img'></image> -->
     </view>
     <button class="panel-btn" bindtap="saveImg">保存图片</button>
     <view class="panel-text">保存图片到手机后，您可以到朋友圈分享该卡牌图片</view>

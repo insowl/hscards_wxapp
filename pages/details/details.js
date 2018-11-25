@@ -78,7 +78,8 @@ Page({
 		let that = this
 		wx.showToast({
 			title: '正在生成图片',
-			icon: 'loading'
+			icon: 'loading',
+      duration: 10000
 		})
 		wx.cloud.callFunction({
 			name: 'getPageCode',
@@ -90,9 +91,6 @@ Page({
 			success: function (res) {
 				const cloudFRes = res
 				console.log(res)
-				// that.setData({
-				//   bImg: res.result.fileID
-				// })
 				let that1 = that
 				wx.getImageInfo({
 					src: cloudFRes.result.wxacode,
@@ -103,36 +101,46 @@ Page({
 						// ctx.scale(0.5, 0.5)
 						// ctx.translate(-200, -360)
 						showctx.setFillStyle('#293C5A')
-						showctx.fillRect(0,0,200,360)
+						showctx.fillRect(0, 0, 200, 360)
+            showctx.setFillStyle('#fff')
+            showctx.fillRect(0, 270, 200, 90)
+            showctx.setStrokeStyle('#293C5A')
+            showctx.strokeRect(0, 0, 200, 360)
 						showctx.drawImage(res.path, 20, 275, 80, 80)
-						showctx.setFillStyle('#0E86CA')
+            showctx.setFillStyle('#151A27')
 						showctx.setFontSize(12)
 						showctx.fillText('炉石卡牌集', 110, 300)
-						showctx.setFillStyle('#ddd')
+            showctx.setFillStyle('#0E86CA')
 						showctx.setFontSize(9)
 						showctx.fillText('长按识别小程序码', 110, 315)
 						showctx.fillText('查看卡牌详情', 110, 328)
 
 						sharectx.setFillStyle('#293C5A')
-						sharectx.fillRect(0, 0, 200 * 4, 360 * 4)
+            sharectx.fillRect(0, 0, 200 * 4, 360 * 4)
+            sharectx.setFillStyle('#fff')
+            sharectx.fillRect(0, 270 * 4, 200 * 4, 90 * 4)
+            sharectx.setStrokeStyle('#293C5A')
+            sharectx.strokeRect(0, 0, 200 * 4, 360 * 4)
 						sharectx.drawImage(res.path, 20 * 4, 275 * 4, 80 * 4, 80 * 4)
-						sharectx.setFillStyle('#0E86CA')
+            sharectx.setFillStyle('#151A27')
 						sharectx.setFontSize(12 * 4)
 						sharectx.fillText('炉石卡牌集', 110 * 4, 300 * 4)
-						sharectx.setFillStyle('#ddd')
+            sharectx.setFillStyle('#0E86CA')
 						sharectx.setFontSize(9 * 4)
 						sharectx.fillText('长按识别小程序码', 110 * 4, 315 * 4)
 						sharectx.fillText('查看卡牌详情', 110 * 4, 328 * 4)
+            
 						wx.getImageInfo({
 							src: cloudFRes.result.image,
 							success: function (res) {
 								// console.log(res)
 								showctx.drawImage(res.path, 10, 10, 180, 255)
-								showctx.draw()
+                showctx.draw(false, function(e){
+                  wx.hideToast()
+                })
 
 								sharectx.drawImage(res.path, 10 * 4, 10 * 4, 180 * 4, 255 * 4)
-								sharectx.draw()
-								wx.hideToast()
+                sharectx.draw()
 							}
 						})
 					}

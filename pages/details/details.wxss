@@ -96,8 +96,8 @@ button {
   line-height: 30rpx;
   text-align: center;
   font-size: 24rpx;
-		color: #fff;
-		padding-bottom: 10rpx;
+  color: #fff;
+  padding-bottom: 10rpx;
 }
 
 .extra-panel {
@@ -147,8 +147,10 @@ button {
 }
 
 .panel-img {
+  margin: 20rpx 0;
   width: 200px;
   height: 360px;
+  box-shadow: 0rpx 0rpx 20rpx #151A27;
 }
 
 .img-canvas {
@@ -164,15 +166,15 @@ button {
 }
 
 .panel-btn {
-  width: 500rpx;
-		height: 80rpx;
-		line-height: 80rpx;
-		border-radius: 10rpx;
-		text-align: center;
-		color: #fff;
-		font-size: 34rpx;
-		background-color: #0E86CA;
-		margin: 10rpx 0;
+  width: 600rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 34rpx;
+  background-color: #0E86CA;
+  margin: 10rpx 0;
 }
 
 .panel-text {
