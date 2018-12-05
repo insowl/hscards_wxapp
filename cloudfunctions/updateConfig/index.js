@@ -46,7 +46,8 @@ exports.main = async (event, context) => {
       'kotf': '冰封王座的骑士',
       'kobolds-catacombs': '狗头人与地下世界',
       'the-witchwood': '女巫森林',
-      'boomsday-project': '砰砰计划'
+      'boomsday-project': '砰砰计划',
+						'rastakhans-rumble': '拉斯塔哈的大乱斗'
     }
   }
   return(config)
