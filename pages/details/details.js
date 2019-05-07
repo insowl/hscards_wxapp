@@ -9,6 +9,9 @@ Page({
 		showPanel: false
 	},
 	onLoad: function (options) {
+		this.setData({
+			version: app.globalData.version
+		})
 		var that = this
 		if (app.globalData.config) {
 			this.setData({

@@ -13,6 +13,7 @@ App({
       })
     },
     globalData: {
-      config: null
+      config: null,
+      version: 'v1.0.4'
     }
 })

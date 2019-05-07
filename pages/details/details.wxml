@@ -37,7 +37,7 @@
 			</button>
 		</view>
   <button class="search" bindtap="back2Index">继续搜索</button>
-  <view class="sign">炉石卡牌集 © ywxv.</view>
+  <view class="sign">炉石卡牌集 {{version}}</view>
   <canvas canvas-id='shareCanvas' class="share-canvas"></canvas>
 </view>
 <view class="extra-panel" wx:if="{{showPanel}}" capture-catch:touchmove="touchMove">
