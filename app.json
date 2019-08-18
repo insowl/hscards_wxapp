@@ -9,5 +9,8 @@
 		"navigationBarTitleText": "炉石卡牌集",
 		"navigationBarTextStyle": "white"
 	},
-	"sitemapLocation": "sitemap.json"
+	"sitemapLocation": "sitemap.json",
+  "navigateToMiniProgramAppIdList": [
+    "wx18a2ac992306a5a4"
+  ]
 }

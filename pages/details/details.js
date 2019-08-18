@@ -178,5 +178,11 @@ Page({
 			withShareTicket: true
 		})
 	},
-	touchMove: function(){}
+  touchMove: function () { },
+  navToGeizan: function () {
+    wx.navigateToMiniProgram({
+      appId: 'wx18a2ac992306a5a4',
+      path: 'pages/apps/largess/detail?id=sdwAemIH4SM%3D'
+    })
+  }
 })

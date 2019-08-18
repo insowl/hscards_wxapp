@@ -37,6 +37,7 @@
 			</button>
 		</view>
   <button class="search" bindtap="back2Index">继续搜索</button>
+  <button class="search" bindtap="navToGeizan">支持一下</button>
   <view class="sign">炉石卡牌集 {{version}}</view>
   <canvas canvas-id='shareCanvas' class="share-canvas"></canvas>
 </view>

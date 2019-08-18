@@ -40,3 +40,11 @@
   </view>
   <view class="loading" wx:if="{{showLoading}}">正在搜索更多卡牌...</view>
 </view>
+<view class='fix-btn' bindtap='navToGeizan'>
+  <view class='btn-content'>
+    <view class='btn-icon'>
+      <image class='icon-img' src='../../icons/thumb-up.png'></image>
+    </view>
+    <view class='btn-text'>给个赞</view>
+  </view>
+</view>

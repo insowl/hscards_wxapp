@@ -132,3 +132,41 @@ input {
   font-size: 22rpx;
   color: #888;
 } */
+
+.fix-btn {
+  position: fixed;
+  right: 30rpx;
+  bottom: 30rpx;
+}
+
+.btn-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.btn-icon {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: #151A27;
+  z-index: 99;
+}
+
+.icon-img {
+  width: 64rpx;
+  height: 64rpx;
+  margin: 18rpx;
+}
+
+.btn-text {
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #FFF;
+  font-size: 28rpx;
+  background-color: #151A27;
+  padding: 0 20rpx 0 50rpx;
+  border-radius: 35rpx;
+  margin-left: -50rpx;
+  z-index: 9;
+}
