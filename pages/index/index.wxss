@@ -133,6 +133,9 @@ input {
   color: #888;
 } */
 
+/* 有赞 */
+
+/* 
 .fix-btn {
   position: fixed;
   right: 30rpx;
@@ -169,4 +172,23 @@ input {
   border-radius: 35rpx;
   margin-left: -50rpx;
   z-index: 9;
+} */
+
+/* 底部广告 */
+
+/* .btm-bar {
+  width: 750rpx;
+  position: fixed;
+  bottom: 0;
 }
+
+.ad-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.btm-ad {
+  width: 300px;
+} */

@@ -40,11 +40,21 @@
   </view>
   <view class="loading" wx:if="{{showLoading}}">正在搜索更多卡牌...</view>
 </view>
-<view class='fix-btn' bindtap='navToGeizan'>
+<!-- 有赞 -->
+<!-- <view class='fix-btn' bindtap='navToGeizan'>
   <view class='btn-content'>
     <view class='btn-icon'>
       <image class='icon-img' src='../../icons/thumb-up.png'></image>
     </view>
     <view class='btn-text'>给个赞</view>
   </view>
-</view>
+</view> -->
+<!-- 底部广告 -->
+<!-- <view class="btm-bar">
+  <view class="ad-container">
+    <view class="btm-ad">
+      <ad unit-id="adunit-28857b7ac2b92fb9"></ad>
+    </view>
+  </view>
+</view> -->
+

@@ -21,10 +21,11 @@ Page({
 			wx.cloud.callFunction({
 				name: 'updateConfig',
 				success: function (res) {
-          console.log(res)
+          // console.log('cloudres')
 					that.setData({
 						config: res.result
-					})
+          })
+          app.globalData.config = res.result
 				}
 			})
 		}
