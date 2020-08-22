@@ -6,6 +6,6 @@ App({
   },
   globalData: {
     config: null,
-    version: 'v1.0.8'
+    version: 'v2.0' //酒馆战棋
   }
 })
