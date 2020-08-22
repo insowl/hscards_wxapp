@@ -1,0 +1,2 @@
+<image class="img1" src="{{img1}}" mode="aspectFit"></image>
+<image class="img2" src="{{img2}}" mode="aspectFit"></image>

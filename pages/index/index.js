@@ -209,6 +209,10 @@ Page({
         total: sum,
         classTotal: Object.keys(res.data.totalPerClass).length
       })
+      //主动搜索一次性加载两页
+      if (that.data.params.p > 1) {
+        that.pageRequest()
+      }
     })
   },
   //翻页搜索请求

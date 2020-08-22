@@ -1,16 +1,34 @@
 {
-	"pages": [
-		"pages/index/index",
-		"pages/details/details"
-	],
-	"window": {
-		"backgroundTextStyle": "light",
-		"navigationBarBackgroundColor": "#151A27",
-		"navigationBarTitleText": "炉石卡牌集",
-		"navigationBarTextStyle": "white"
-	},
-	"sitemapLocation": "sitemap.json",
-  "navigateToMiniProgramAppIdList": [
-    "wx18a2ac992306a5a4"
-  ]
+  "pages": [
+    "pages/index/index",
+    "pages/chess/chess",
+    "pages/details/details",
+    "pages/chessDetails/chessDetails"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#151A27",
+    "navigationBarTitleText": "炉石卡牌集",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#FFFFFF",
+    "selectedColor": "#0E86CA",
+    "backgroundColor": "#151A27",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/icons/index.png",
+        "selectedIconPath": "/icons/index-s.png"
+      },
+      {
+        "pagePath": "pages/chess/chess",
+        "text": "战棋",
+        "iconPath": "/icons/chess.png",
+        "selectedIconPath": "/icons/chess-s.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
 }

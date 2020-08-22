@@ -3,18 +3,9 @@ App({
     wx.cloud.init({
         env: 'hscards-08625d'
     })
-    // let that = this
-    // wx.cloud.callFunction({
-    //   name: 'updateConfig',
-    //   success: function(res){
-    //     console.log(res.result)
-    //     that.globalData.config = res.result
-    //     console.log(that.globalData)
-    //   }
-    // })
   },
   globalData: {
     config: null,
-    version: 'v1.0.7'
+    version: 'v1.0.8'
   }
 })

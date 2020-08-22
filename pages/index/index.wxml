@@ -24,16 +24,15 @@
     <view class="button" bindtap="doSearch" >搜索</view>
   </view>
   <view class="list-view">
-    <view wx:if="{{showAd}}" class="ad-bar">
-      <!-- <view class="close" bindtap="closeAd">关闭</view> -->
+    <!-- <view wx:if="{{showAd}}" class="ad-bar">
       <view class="ad">
         <ad unit-id="adunit-28857b7ac2b92fb9"></ad>
       </view>
-    </view>
+    </view> -->
     <view class="result">{{text}}职业：共{{total}}张卡牌</view>
     <block wx:for="{{cardList}}" wx:for-item="card" wx:key="*this">
       <view class="list-item" bindtap="nav2Detail" data-card="{{card}}" data-name="{{card.name}}" data-cost='{{card.cost}}' data-cardclass='{{card.cardclass}}'>
-        <image class="card-img" src="{{card.imageUrl}}" mode="scaleToFill" style="width: 280rpx; height: 400rpx;"/>
+        <image class="card-img" src="{{card.imageUrl}}" mode="aspectFit"/>
         <view class="card-name">{{card.name}}</view>
       </view>
     </block>

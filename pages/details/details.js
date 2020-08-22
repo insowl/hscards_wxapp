@@ -38,6 +38,20 @@ Page({
 			this.setData({
 				card: JSON.parse(cardStr)
 			})
+			console.log(this.data.config.cardSet[this.data.card.cardSet])
+			if(!this.data.config.cardSet[this.data.card.cardSet]){
+				wx.cloud.callFunction({
+					name: 'refreshCardSets',
+					success: function (res) {
+						console.log(res)
+						that.setData({
+							config: res.result,
+							card: JSON.parse(cardStr)
+						})
+						app.globalData.config = res.result
+					}
+				})
+			}
 		} else {
 			let params = {
 				keywords: options.name,
@@ -49,6 +63,19 @@ Page({
 				that.setData({
 					card: res.data.cards[0]
 				})
+				console.log(this.data.config.cardSet[this.data.card.cardSet])
+				if(!this.data.config.cardSet[this.data.card.cardSet]){
+					wx.cloud.callFunction({
+						name: 'refreshCardSets',
+						success: function (res) {
+							that.setData({
+								config: res.result,
+								card: res.data.cards[0]
+							})
+							app.globalData.config = res.result
+						}
+					})
+				}
 			})
 		}
 	},

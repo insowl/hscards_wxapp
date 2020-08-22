@@ -1,0 +1,38 @@
+<view class="container">
+  <view class="head">
+    <view class="tab">
+      <view class="types">
+        <radio-group bindchange="radioChange">
+          <view class='label'>
+            <label class="ui-radio {{item.checked==true?'active':''}}" wx:for="{{radioItems}}">
+              <radio value="{{item.value}}" checked="{{item.checked}}" />
+              <text class="text">{{item.name}}</text>
+            </label>
+          </view>
+        </radio-group>
+      </view>
+      <view class="tiers" wx:if="{{type == 'minion'}}">
+        <checkbox-group bindchange="checkboxChange">
+          <view class='label'>
+            <label class="ui-radio {{item.checked==true?'active':''}}" wx:for="{{checkboxItems}}">
+              <checkbox value="{{item.name}},{{item.id}}" checked="{{item.checked}}" />
+              <text class="text">{{item.name}}</text>
+            </label>
+          </view>
+        </checkbox-group>
+      </view>
+    </view>
+    <view class="search">
+      <input type="text" placeholder="请输入关键字" maxlength='12' confirm-type='search' bindinput='bindInput' bindconfirm='bindConfirm'/>
+      <view class="button" bindtap="doSearch" >搜索</view>
+    </view>
+  </view>
+  <view class="list">
+    <block wx:for="{{list}}" wx:for-item="item">
+      <view class="list-item" bindtap="nav2Detail" data-minionid="{{item.battlegrounds.upgradeId}}" data-heroid="{{item.childIds[0]}}" data-img="{{item.battlegrounds.image}}" data-imggold="{{item.battlegrounds.imageGold}}">
+        <image class="item-img" src="{{item.battlegrounds.image}}" mode="aspectFit"/>
+        <view class="item-name">{{item.name}}</view>
+      </view>
+    </block>
+  </view>
+</view>

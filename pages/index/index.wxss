@@ -17,7 +17,7 @@ picker {
   width: 249rpx;
   height: 80rpx;
   float: left;
-  font-size: 36rpx;
+  font-size: 28rpx;
 }
 
 .content {
@@ -56,7 +56,7 @@ picker {
 input {
   float: left;
   width: 450rpx;
-  height: 60rpx;
+  height: 50rpx;
   margin-left: 30rpx;
   margin-top: 10rpx;
   margin-right: 30rpx;
@@ -64,16 +64,16 @@ input {
   padding-right: 30rpx;
   border: solid 1rpx #0E86CA;
   border-radius: 30rpx;
-  font-size: 36rpx;
+  font-size: 28rpx;
 }
 
 .button {
   float: left;
   width: 150rpx;
-  height: 60rpx;
-  line-height: 60rpx;
+  height: 50rpx;
+  line-height: 50rpx;
   text-align: center;
-  font-size: 36rpx;
+  font-size: 28rpx;
   color: #fff;
   margin-top: 10rpx;
   background-color: #0E86CA;
@@ -95,19 +95,21 @@ input {
 }
 
 .list-item{
-  width: 50%;
+  width: 250rpx;
   float: left;
   border-top: solid 20rpx #293C5A;
   border-bottom: solid 20rpx #293C5A;
 }
 
 .card-img {
-  margin-left: 45rpx;
+  width: 200rpx;
+  height: 300rpx;
+  margin-left: 25rpx;
 }
 
 .card-name {
   text-align:center;
-  font-size: 36rpx;
+  font-size: 26rpx;
 }
 
 .loading {
@@ -116,7 +118,7 @@ input {
   line-height: 100rpx;
   text-align: center;
   border-top: solid 1rpx #0E86CA;
-  font-size: 36rpx;
+  font-size: 26rpx;
 		color: #fff;
 }
 
